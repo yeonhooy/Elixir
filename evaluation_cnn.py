@@ -1119,14 +1119,14 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
     print(inference)
 
     # ANSWER sheet for test_input
-    realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
-    #realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
+    #realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
+    realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/dt_csv/" + resultFileName + ".xlsx"
 
     print(realdatafilename)
     real_wb = load_workbook(realdatafilename, data_only=True)
-    real_sheet = real_wb["Sheet"]
-    #real_sheet = real_wb["Sheet1"]
+    #real_sheet = real_wb["Sheet"]
+    real_sheet = real_wb["Sheet1"]
     #real_sheet = real_wb[resultFileName]
     # input("stop")
 
@@ -1469,8 +1469,8 @@ def main():
         # input("save csv file")
 
         # QUESTION Sheet
-        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/new_score_csv/' + resultFileName + '.csv')
-        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
+        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/new_score_csv/' + resultFileName + '.csv')
+        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/dt_csv/' + resultFileName + '.csv')
 
         # --> test input is for test
