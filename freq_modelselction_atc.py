@@ -128,6 +128,7 @@ summarywb = openpyxl.Workbook()
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
     suptxt = open("dataset_new_avg/result/modelselect/freq.txt", 'a')
+    # load pathfile: load inference file 
     pathfile = 'dataset_new_avg/result/naive_result/'+xlfile
     filenaming = xlfile.split('_inference.xlsx')
     resultFileName = filenaming[0]
