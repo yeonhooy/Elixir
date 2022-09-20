@@ -114,7 +114,7 @@ def loadSupreme(modeltxt):
 
 #MAIN
 #파일 읽어오기
-path_name = "dataset_new_avg/result/naive_result"
+path_name = "dataset_new_avg/result/scoring_result"
 file_list = os.listdir(path_name)
 # resultfile이 TX인지 RX인지 구분
 file_list = [file for file in file_list if file.endswith("inference.xlsx")]
@@ -128,8 +128,8 @@ summarywb = openpyxl.Workbook()
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
     suptxt = open("dataset_new_avg/result/modelselect/freq.txt", 'a')
-    # load pathfile: load inference file 
-    pathfile = 'dataset_new_avg/result/naive_result/'+xlfile
+    # load pathfile: load inference file
+    pathfile = 'dataset_new_avg/result/scoring_result/'+xlfile
     filenaming = xlfile.split('_inference.xlsx')
     resultFileName = filenaming[0]
     resultsheet = summarywb.create_sheet(resultFileName)
