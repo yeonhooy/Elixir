@@ -135,7 +135,7 @@ def loadSupreme(modelpath):
 
 #MAIN
 #파일 읽어오기
-path_name = "dataset_new_avg/result"
+path_name = "dataset_new_avg/result/evaluation_result"
 file_list = os.listdir(path_name)
 # resultfile이 TX인지 RX인지 구분
 file_list = [file for file in file_list if file.endswith("inference.xlsx")]
