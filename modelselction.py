@@ -114,6 +114,7 @@ def loadSupreme(modeltxt):
 
 #MAIN
 #파일 읽어오기
+print("Supreme model selection")
 path_name = "dataset_new_avg/result/scoring_result"
 file_list = os.listdir(path_name)
 # resultfile이 TX인지 RX인지 구분
