@@ -14,3 +14,7 @@
 #### (1) naive model selection
 #### python naivemodelselection.py
 
+#### (2) frequency rate model seleciton
+#### python freq_modelselection.py
+
+
