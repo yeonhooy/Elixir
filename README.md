@@ -17,4 +17,5 @@
 #### (2) frequency rate model seleciton
 #### python freq_modelselection.py
 
-
+#### (3) supreme model selection
+#### python supreme_modelselection.py
