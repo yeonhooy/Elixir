@@ -9,3 +9,8 @@
 #### location of test dataset(csv, xlsx) 
 #### -> AlphaSDN_codes/dataset_new_avg/inf_realvalue
 #### python evaluation_cnn.py 
+
+### 3. Model selection
+#### (1) naive model selection
+#### python naivemodelselection.py
+
