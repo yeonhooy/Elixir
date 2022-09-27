@@ -17,8 +17,6 @@ def selectedModelResut(xfile,modelSavefile,filename,modelDict):
             pass
         else:
             fileoutputName = filename+"+"+output
-            print(fileoutputName)
-            input("s")
             selectModel = modelDict[fileoutputName]
 
         outputcol = outputcol+1
@@ -36,7 +34,6 @@ def selectedModelResut(xfile,modelSavefile,filename,modelDict):
 
             modelcol = findcol(sheet, selectModel, modelNum)
             modelRmse = selectRMSE(sheet,sampleNum, modelcol)
-
 
             #input("fr")
             modelSavefile.cell(row=2,column=1+outputcol).value=selectModel
@@ -113,17 +110,6 @@ def selectRMSE(sheet,sampelNum,modelcol):
     rmsevalue = (sum / sampelNum) ** (1 / 2)
     return rmsevalue
 
-def selectRMSE(sheet,sampelNum,modelcol):
-    print(modelcol)
-    sum=0
-    for j in range(sampelNum):
-        realvalue = sheet.cell(row=2 + j, column=8).value
-        predict = sheet.cell(row=2 + j, column=modelcol).value
-        m = (realvalue - predict) * (realvalue - predict)
-        sum = sum + m
-    rmsevalue = (sum / sampelNum) ** (1 / 2)
-    return rmsevalue
-
 def loadSupreme(modelpath):
     modeltxt = open(modelpath,'r')
     models = {}
@@ -148,21 +134,22 @@ outputs = ['avgSentMsg', 'avgSentByte', 'secMaxSendMsg','secMaxSendByte','avgRec
 #결과 파일 생성
 summarywb = openpyxl.Workbook()
 modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'supreme.txt')
+print(modelDict)
 
 #modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'freq.txt')
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
     pathfile = 'dataset_new_avg/result/'+xlfile
-    #filenaming = xlfile.split('_inference.xlsx')
     filenaming = xlfile.split('_inference.xlsx')
+    #filenaming = xlfile.split('_inference_frequency_measure.xlsx')
     resultFileName = filenaming[0]
     resultsheet = summarywb.create_sheet(resultFileName)
     selectedModelResut(pathfile,resultsheet,resultFileName,modelDict)
     #summary_all(resultFileName,resultsheet)
     #summarywb.remove(summarywb['Sheet'])
-#summarywb.save('dataset_new_avg/result/modelselect/suprmeSelectModelRMSE.xlsx')
-summarywb.save('dataset_new_avg/result/modelselect/supremeSelectModel_RMSE(de).xlsx')
-#summarywb.save('dataset_new_avg/result/modelselect/de-model-test-frequency_measure.xlsx')
+#summarywb.save('dataset_new_avg/result/modelselect/selectModelRMSE.xlsx')
+#summarywb.save('dataset_new_avg/result/modelselect/de-model-test-freqModelRMSE.xlsx')
+summarywb.save('dataset_new_avg/result/modelselect/de-model-test-frequency_measure.xlsx')
 print("FINISH!")
 
 
