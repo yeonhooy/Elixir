@@ -53,6 +53,7 @@ import shutil
 import datetime
 #os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 # os.environ["CUDA_VISIBLE_DEVICES"] = ""
+# test for 10-05
 
 from openpyxl import Workbook
 
