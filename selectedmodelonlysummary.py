@@ -152,7 +152,7 @@ modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'supreme.txt')
 #modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'freq.txt')
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
-    pathfile = 'dataset_new_avg/result/'+xlfile
+    pathfile = 'dataset_new_avg/result/evaluation_result/'+xlfile
     #filenaming = xlfile.split('_inference.xlsx')
     filenaming = xlfile.split('_inference.xlsx')
     resultFileName = filenaming[0]
