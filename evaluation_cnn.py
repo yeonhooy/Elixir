@@ -1122,7 +1122,7 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
     #realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
     realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/dt_csv/" + resultFileName + ".xlsx"
-    #realdatafilename = "dataset_new_avg/inf_realvalue/fl_eval/" + resultFileName + ".xlsx"
+    #realdatafilename = "dataset_new_avg/inf_realvalue/fl_dt/" + resultFileName + ".xlsx"
 
     print(realdatafilename)
     real_wb = load_workbook(realdatafilename, data_only=True)

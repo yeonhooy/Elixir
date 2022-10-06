@@ -18,7 +18,7 @@ def selectedModelResut(xfile,modelSavefile,filename,modelDict):
         else:
             fileoutputName = filename+"+"+output
             print(fileoutputName)
-            input("s")
+            #input("s")
             selectModel = modelDict[fileoutputName]
 
         outputcol = outputcol+1
