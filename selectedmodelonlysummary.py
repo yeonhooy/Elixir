@@ -137,7 +137,7 @@ def loadSupreme(modelpath):
 
 #MAIN
 #파일 읽어오기
-path_name = "dataset_new_avg/result/evaluation_result"
+path_name = "dataset_new_avg/result/scoring_result"
 file_list = os.listdir(path_name)
 # resultfile이 TX인지 RX인지 구분
 file_list = [file for file in file_list if file.endswith("inference.xlsx")]
@@ -147,12 +147,13 @@ outputs = ['avgSentMsg', 'avgSentByte', 'secMaxSendMsg','secMaxSendByte','avgRec
 
 #결과 파일 생성
 summarywb = openpyxl.Workbook()
-modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'supreme.txt')
+modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'freq.txt')
+#supreme, naiive, freq
 
 #modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'freq.txt')
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
-    pathfile = 'dataset_new_avg/result/evaluation_result/'+xlfile
+    pathfile = 'dataset_new_avg/result/scoring_result/'+xlfile
     #filenaming = xlfile.split('_inference.xlsx')
     filenaming = xlfile.split('_inference.xlsx')
     resultFileName = filenaming[0]
@@ -161,7 +162,7 @@ for xlfile in file_list:
     #summary_all(resultFileName,resultsheet)
     #summarywb.remove(summarywb['Sheet'])
 #summarywb.save('dataset_new_avg/result/modelselect/suprmeSelectModelRMSE.xlsx')
-summarywb.save('dataset_new_avg/result/modelselect/supremeSelectModel_RMSE(de).xlsx')
+summarywb.save('dataset_new_avg/result/modelselect/freqSelectModel_RMSE(ds).xlsx')
 #summarywb.save('dataset_new_avg/result/modelselect/de-model-test-frequency_measure.xlsx')
 print("FINISH!")
 

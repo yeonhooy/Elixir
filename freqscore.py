@@ -144,7 +144,7 @@ outputs = ['avgSentMsg', 'avgSentByte', 'secMaxSendMsg','secMaxSendByte','avgRec
 
 #결과 파일 생성
 summarywb = openpyxl.Workbook()
-modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'freq.txt') # supreme, naiive, freq
+modelDict = loadSupreme('dataset_new_avg/result/modelselect/'+'naiive.txt') # supreme, naiive, freq
 
 #한파일씩 처리하기(TX,RX 같이 처리하기)
 for xlfile in file_list:
@@ -163,7 +163,7 @@ for xlfile in file_list:
     #summary_all(resultFileName,resultsheet)
     #summarywb.remove(summarywb['Sheet'])
     #suptxt.close()
-summarywb.save('dataset_new_avg/result/modelselect/f_supremeSelectModel_freq(dt).xlsx')
+summarywb.save('dataset_new_avg/result/modelselect/naiiveSelectModel_freq(dt).xlsx')
 print("FINISH!")
 
 
