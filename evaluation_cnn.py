@@ -1122,7 +1122,7 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
     #realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
     realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/dt_csv/" + resultFileName + ".xlsx"
-    realdatafilename = "dataset_new_avg/inf_realvalue/fl_score/" + resultFileName + ".xlsx"
+    #realdatafilename = "dataset_new_avg/inf_realvalue/fl_eval/" + resultFileName + ".xlsx"
 
     print(realdatafilename)
     real_wb = load_workbook(realdatafilename, data_only=True)
@@ -1473,7 +1473,7 @@ def main():
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/new_score_csv/' + resultFileName + '.csv')
         testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/dt_csv/' + resultFileName + '.csv')
-        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/fl_score/' + resultFileName + '.csv')
+        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/fl_eval/' + resultFileName + '.csv')
 
         # --> test input is for test
         test_input = testdatasetw[['switch_e', 'switch_c', 'host', 'connection', 'interval', 'link', 'hop']]
