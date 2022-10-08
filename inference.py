@@ -773,6 +773,7 @@ def cnnModel(X_train, X_test, y_train, y_test, test_input, cnnname, outputType, 
         model = keras.models.load_model(loadmodel_path)
     except:
         print("no model!!")
+        #input("what?")
         return None, None, None
 
     print("<<<<<<ANN_space>>>>>>>>>>>")
@@ -962,7 +963,8 @@ def sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test, labels_name, test_in
                 print(cnnName)
                 #input("wrong model append")
 
-
+    print(allmodels)
+    #input("dd")
     outputset = Y
     singleOutputset = []
     for p in range(len(labels_name)):
@@ -1120,9 +1122,10 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
 
     # ANSWER sheet for test_input
     #realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
-    realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
+    #realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/dt_csv/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/fl_dt/" + resultFileName + ".xlsx"
+    realdatafilename = "dataset_new_avg/inf_realvalue/TC_test/" + resultFileName + ".xlsx"
 
     print(realdatafilename)
     real_wb = load_workbook(realdatafilename, data_only=True)
@@ -1471,9 +1474,10 @@ def main():
 
         # QUESTION Sheet
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/new_score_csv/' + resultFileName + '.csv')
-        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
+        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/dt_csv/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/fl_eval/' + resultFileName + '.csv')
+        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/TC_test/' + resultFileName + '.csv')
 
         # --> test input is for test
         test_input = testdatasetw[['switch_e', 'switch_c', 'host', 'connection', 'interval', 'link', 'hop']]
