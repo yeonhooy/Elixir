@@ -822,7 +822,8 @@ def annModel(architecture, X_train, X_test, y_train, y_test, annname,outputType,
     model.fit(X_train, y_train, batch_size=32, verbose=1, epochs=1000, validation_split=0.15, callbacks=[early_stop])
     end_time = datetime.datetime.now()
     train_time = (end_time - start_time).total_seconds()
-    string_time = annname + " : " + str(train_time) + "\n"
+    model_name = "%s_%s_%s" % (resultFileName, outputType, annname)
+    string_time = model_name + " : " + str(train_time) + "\n"
 
     print(start_time, end_time, train_time, string_time)
     # input("check")
