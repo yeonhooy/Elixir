@@ -308,14 +308,14 @@ if __name__ == '__main__':
     # result1 = c1.cmd("iperf -c %s -p 5301 -P %d -b %dM -t %d >> logResult/iperfResult/iperf_%s_%s_%s_c.txt &"
     #                  % (s1.params['ip'],128, 0, 60, current_time, c1.name, s1.name))
 
-    #    pport = 3000
+    pport = 3000
 
-    #    c1 = hosts[1]
-    #    s1 = hosts[13]
-    #    te = 1
-    #    print("Generate Traffic bewteen %s and %s using port(%s)" % (c1.params['ip'], s1.params['ip'], pport))
-    #    result1 = s1.cmd("iperf -s -1 -p 5000 > logResult/iperfResult/v1_host_s.txt &")
-    #    result2 = c1.cmd("iperf -c 192.0.0.13 -p 5000 -n 1 -l 100 -P 1 > logResult/iperfResult/v1_host_c.txt &")
+    c1 = hosts[1]
+    s1 = hosts[13]
+    te = 1
+    print("Generate Traffic bewteen %s and %s using port(%s)" % (c1.params['ip'], s1.params['ip'], pport))
+    result1 = s1.cmd("iperf -s -1 -p 5000 > logResult/iperfResult/v1_host_s.txt &")
+    result2 = c1.cmd("iperf -c 192.0.0.13 -p 5000 -n 1 -l 100 -P 1 > logResult/iperfResult/v1_host_c.txt &")
 
     ppport = 3001
     td = 2
