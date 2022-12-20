@@ -6,7 +6,8 @@
   dataset path: dataset_new_avg/xxx.csv
   result paht: dataset_new_avg/result/modelselect/
   ```
-### 2. inference code: $ python inference.py
+### 2. inference code: 
+  `$ python inference.py`
   ```
   - inference dataset path: dataset_new_avg/inf_realvalue/<directory>/xxx.csv (xlsx)
   - require both csv file and xlsx file
