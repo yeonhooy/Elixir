@@ -16,7 +16,7 @@ The code also includes the training and inference process of *Meteor* predictor,
 
 The repository is organized as follows:
 
-* `topology_experiment/`: NO!! contains scripts for physical network topology using Mininet; `linear.py`, `fattree.py`.
+* `topology_experiment/`: contains scripts for virtual network topology using Mininet.
    *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
 * `dataset_new_avg/`: contains the core implementation of *Elixir*. 
    * `dataset_new_avg/exlixir_model_save/` 
