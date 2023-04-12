@@ -20,15 +20,12 @@ The repository is organized as follows:
    *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
 * `dataset_new_avg/`: contains the core implementation of *Elixir*. 
    * `dataset_new_avg/exlixir_model_save/` 
-   * `dataset_new_avg/
-   * `dataset_new_avg/
-   * `dataset_new_avg/
-   * `dataset_new_avg/
-   * `Meteor/vnetCreation/` contains scripts for virtual network creations
-   * `Meteor/MeteorPredictor/` contains scripts for control traffic inference by *Meteor* predictor
-   * `Meteor/MeteorPredictor/model/meterPredictor.pt` is the pre-trained *Meteor* predictor model used in our study
-* `MeteorPredictor_training/`: contains training codes and training dataset for *Meteor* predictor.
-  * We implemented *Meteor* predictor as an LSTM autoencoder based on this [implementation](https://github.com/lkulowski/LSTM_encoder_decoder).
+   * `dataset_new_avg/inf_realvalue/new_score_csv/`
+   * `dataset_new_avg/result/`
+   * `dataset_new_avg/scoring/`
+   * `dataset_new_avg/test_datacenter/`
+   * `dataset_new_avg/timestamp/`
+
 
 
 ### 1. train code 
