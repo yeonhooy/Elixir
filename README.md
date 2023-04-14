@@ -1,10 +1,10 @@
 # Elixir 
 
-This repository contains the implementation of *Elixir*, a network hypervisor for control channel isolation with control traffic prediction.
+This repository contains the implementation of *Elixir*, a machine learning framework for control traffic prediction in SDN systems
 
 ## Overview
 
-We provide all source codes, including *Elixir* implementation and experiment scripts. The provided codes run the entire virtualized SDN system consisting of emulated physical network, *Meteor* hypervisor, virtualized networks, and SDN controllers for the virtualized networks.
+We provide all source codes, including *Elixir* implementation and experiment scripts. The provided codes xx.
 
 The code also includes the training and inference process of *Meteor* predictor, a machine learning model for control traffic prediction. With the *Meteor* predictor, *Meteor* achieves control channel isolation. 
 
