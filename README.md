@@ -26,7 +26,7 @@ The repository is organized as follows:
    * `dataset_new_avg/test_datacenter/`
    * `dataset_new_avg/timestamp/`
 
-
+## Execution instructions 
 
 ### 1. train code 
   `$ python trainmodel.py`
