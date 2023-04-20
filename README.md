@@ -7,7 +7,7 @@ This repository contains the implementation of *Elixir*, a machine learning fram
 We provide all source codes, including *Elixir* implementation and experiment scripts. The provided codes xx.
 
 * [Part 1](#Repository-organization) describes the source-code organization of this repository.
-* [Part 2](#Settings) contains the steps to configure dependencies and compilation to run *Elixir*.
+* [Part 2](#Prerquisites) contains the steps to configure dependencies and compilation to run *Elixir*.
 * [Part 3](#Execution-guides) gives a general guide on executing the codes. 
 
 ## Repository organization 
@@ -23,6 +23,8 @@ The repository is organized as follows:
    * `dataset_new_avg/scoring/`
    * `dataset_new_avg/test_datacenter/`
    * `dataset_new_avg/timestamp/`
+
+## Prerquisites 
 
 ## Execution guides 
 
