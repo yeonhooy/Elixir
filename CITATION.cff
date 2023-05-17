@@ -1,0 +1,23 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Elixir: machine learning-based prediction model
+  formulation framework for control traffic in SDN systems
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Yeonho
+    family-names: Yoo
+  - given-names: Gyeongsik
+    family-names: Yang
+  - given-names: Changyong
+    family-names: Shin
+  - given-names: Junseok
+    family-names: Lee
+  - given-names: Chuck
+    family-names: Yoo
+repository-code: 'https://github.com/yeonhooy/Elixir'
