@@ -32,7 +32,7 @@ The repository is organized as follows:
   `$ python trainmodel.py`
   ```
   dataset path: dataset_new_avg/xxx.csv
-  result paht: dataset_new_avg/result/modelselect/
+  result path: dataset_new_avg/result/modelselect/
   ```
 ### 2. inference code: 
   `$ python inference.py`
