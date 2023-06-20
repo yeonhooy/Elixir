@@ -14,16 +14,17 @@ We provide all source codes, including *Elixir* implementation and experiment sc
 
 The repository is organized as follows:
 
-* `topology_experiment/`: contains scripts for virtual network topology using Mininet.
-   *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
-* `dataset_new_avg/`: contains the core implementation of *Elixir*. 
+* `Elixir/`: contains the core implementation of *Elixir*. 
+* `Elixir/dataset_new_avg/`: contains the core implementation of *Elixir*. 
    * `dataset_new_avg/exlixir_model_save/` 
    * `dataset_new_avg/inf_realvalue/new_score_csv/`
    * `dataset_new_avg/result/`
    * `dataset_new_avg/scoring/`
    * `dataset_new_avg/test_datacenter/`
    * `dataset_new_avg/timestamp/`
-
+* `Elixir/topology_experiment/`: contains scripts for virtual network topology using Mininet.
+   *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
+     
 ## Prerquisites 
 
 ## Execution guides 
