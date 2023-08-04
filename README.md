@@ -28,6 +28,8 @@ The repository is organized as follows:
 ## Prerquisites 
 -  install required dependencies and libraries with conda (Please install conda)
 -  execute conda: $conda activate
+-  import conda env: $conda env create -f Elixir_env.yaml
+-  activate env: $conda activate Elixir_env
 
 ## Execution guides 
 
