@@ -1808,14 +1808,12 @@ def main():
     print(file_list_csv)
     counter = 1
 
-    #1. get test data (for inference)
+    #1. get test data (for inference) - will not be used at training session
     test_path_name = "dataset_new_avg/test_datacenter"
     testfile_list = os.listdir(test_path_name)
     testfile_list_csv = [file for file in testfile_list if file.endswith(".csv")]
     testfile_list_csv.sort()
-    print(file_list_csv)
-    #file_list_csv = ['fl_default_of13.csv']
-    #file_list_csv = ['p4_default.csv']
+    print(testfile_list_csv)
 
 
     for csvfile in file_list_csv:
@@ -1892,7 +1890,7 @@ def main():
         file = open("dataset_new_avg/timestamp/"+resultFileName+".txt", "w")
         file.close()
 
-
+        # 1 round -> tx, 2 round -> rx
         for num in range(0,2):
             result_excel = Workbook()
             resultfilename[num] = resultFileName+"_result_"+resultNum[num]+".xlsx"
