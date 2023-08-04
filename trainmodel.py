@@ -1,3 +1,9 @@
+# Copyright 2023 by Yeonho Yoo, Operating systems lab (Korea university, Seoul).
+# All rights reserved.
+# This file is part of Machine Learning-based Prediction Models for Control Traffic in SDN Systems (Elixr),
+# and is released under the "MIT License Agreement". Please see the LICENSE
+# file that should have been included as part of this package.
+
 from __future__ import absolute_import, division, print_function, unicode_literals, unicode_literals
 
 import math
@@ -820,7 +826,6 @@ def annModel(architecture, X_train, X_test, y_train, y_test, annname,outputType,
     valid_output = np.array(valid_output)
     rmse_1 = np.square(valid_inference-valid_output)
     print(rmse_1)
-    #input("((((")
 
 
     validsetlen = len(valid_output)
@@ -831,7 +836,6 @@ def annModel(architecture, X_train, X_test, y_train, y_test, annname,outputType,
             rmse_1_sum=rmse_1_sum+rmse_1[y][x]
         rmse_annset.append(math.sqrt(rmse_1_sum)/validsetlen)
     print(rmse_annset)
-    #input("((((")
 
     del model
     # print accuracy
@@ -846,11 +850,6 @@ def cnnModel(architecture, X_train, X_test, y_train, y_test, cnnname,outputType,
     checkpoint_dir = os.path.dirname(checkpoint_path)
     cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path, save_weights_only=True, verbose=1)
 
-    # 스케일링
-    # 1.minmax 스케일러
-    # scaler = MinMaxScaler()
-    # X_train = scaler.fit_transform(X_train)
-    # X_test = scaler.transform(X_test)
     modelSummary = []
 
     # function api
@@ -944,7 +943,6 @@ def cnnModel(architecture, X_train, X_test, y_train, y_test, cnnname,outputType,
     string_time = cnnname + " : " + str(train_time) + "\n"
 
     print(start_time, end_time, train_time, string_time)
-    # input("check")
 
     file = open("dataset_new_avg/elixir-modelsave/train_time.txt", "a")
     file.write(string_time)
@@ -992,8 +990,8 @@ def sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test, labels_name,outputTy
     #valid_input=np.array(valid_input,np.int32)
     #inf_filename = inf_filename
 
-    #layers : 최대 레이어수 (1~ layers)
-    #nodes : 최대  노드수 (4~nodes)
+    #layers : Max later size (1~ layers)
+    #nodes : Max node size (4~nodes)
     models = []
     results = []
     validset = []
@@ -1133,8 +1131,7 @@ def sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test, labels_name,outputTy
             rmsemodel[id]='LIGHTGBM'
     print(rmsemodel)
 
-
-    # #find min RMSE form LR, SVR, RF
+    # #find min RMSE form LR, SVR, RF (shallow search)
     # for q in range(0,4):
     #     setall = []
     #     for w in range(0,5):
@@ -1142,8 +1139,8 @@ def sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test, labels_name,outputTy
     #     rmse_set.append(min(setall))
     # print("rmse_minset: ", str(rmse_set))
 
-    # todo: base on min value, search ANN model sapce
-    # 4. ANN
+
+    # 4. ANN (deep search1)
     input_num = X.shape[1]
     output_num = Y.shape[1]
 
@@ -1170,14 +1167,14 @@ def sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test, labels_name,outputTy
 def ann_randomnode(startNode,architecture,nodes,models,results,X_train, X_test, Y_train, Y_test,name_count,minrmse,rmsemodel,outputType,resultFileName,valid_input,valid_output):
     newNode=8
     index_node = 0
-    for i in range(1, 11):  # 레이어 갯수는 1~max레이어가 되도록
+    for i in range(1, 11):  #range from 1 to max layer size (Layer size)
         architecture.initial_utnis([])
         annname = "ANN_" + str(name_count) + "_" + str(i)
         architecture.update_name(annname)
         newlayer = random.randint(1, 10)
         architecture.update_layers(newlayer)
         count = 1
-        for j in range(0, newlayer):  # 레이어 갯수만큼 반복이 되야겠다. 레이어별 노드를 쌓는다.
+        for j in range(0, newlayer):
             print("count: ",count)
             print("nodes(i): ",nodes)
             if newNode > 8:
@@ -1270,7 +1267,7 @@ def cnn_randomnode(startNode,architecture,nodes,models,results,X_train, X_test, 
     print(X_train.shape)
     print(X_train.shape[0])
 
-    for i in range(1, 11):  # 레이어 갯수는 1~max레이어가
+    for i in range(1, 11):  # layer size (max : 11)
         X_train_conv = []
         X_test_conv = []
         X_train_flat = []
@@ -1359,17 +1356,11 @@ def cnn_randomnode(startNode,architecture,nodes,models,results,X_train, X_test, 
             # for m in range(0, X_test.shape[0]):
             #     X_test_conv[m] = Conv1D(filters=filterNum, kernel_size=filter, activation=acf, strides=stride, input_shape=kernelShape)(X_test_conv[m])
             print(X_train_conv[0])
-            #input("conv1d")
             intKernel = nextKernel
             intFilter = filterNum
             kernelShape = outShpae
             print(X_train)
             print(X_train.shape)
-            #input("3")
-
-        #input("convdone")
-
-
 
         architecture.initial_utnis([])
         cnnname = "CNN_" + str(name_count) + "_" + str(i)
@@ -1397,7 +1388,7 @@ def cnn_randomnode(startNode,architecture,nodes,models,results,X_train, X_test, 
         newlayer = random.randint(1, 10)
         architecture.update_layers(newlayer)
         count = 1
-        for j in range(0, newlayer):  # 레이어 갯수만큼 반복이 되야겠다. 레이어별 노드를 쌓는다.
+        for j in range(0, newlayer):
             print("count: ", count)
             print("nodes(i): ", nodes)
             if newNode <= 0:
@@ -1680,7 +1671,7 @@ def wirteInferenceSingle(testdatafile,inference,resultfile,outputType,modelName)
     print(testdata)
 
     if outputType == 'TX':
-        # 모델 당 sheet 생성
+        # create sheet per model
         sheet = resultfile.create_sheet(modelName)
         sheet.cell(row=1, column=1).value = "Switch_e"
         sheet.cell(row=1, column=2).value = "Switch_c"
@@ -1747,11 +1738,9 @@ def csvTrain(result_excel, X,Y, result_name,worksheetName):
         #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
         print(X_train, X_test, Y_train, Y_test)
 
-        #TODO: layer수, 노드 수가 변수이고, ann에서 다른 파라미터를 추가하기
         models, results = sequentialTrain(X, Y, X_train, X_test, Y_train, Y_test)  # 3,3 --> (1,2,4) , (1,2,4)
         print("COUNT: ",count)
         all_results.append(results)
-        #print("All results", all_results)
         count = count+1
     model_length = len(models)
     total_elements = model_length*36
@@ -1791,13 +1780,14 @@ def csvTrain(result_excel, X,Y, result_name,worksheetName):
 
     write_excel(result_excel, models, tmp_n, result_name,worksheetName)
 
-                                ##########################################
-                                ################ MAIN ####################
-                                ##########################################
 
 def main():
+                                                ##########################################
+                                                ################ MAIN ####################
+                                                ##########################################
+    # cuda setting
     os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
-    # file_name = input('파일 이름(확장자빼고)을 적고, 이 파일 이름대로 결과가 엑셀로 저장됩니다. >> ')
+    # file_name = input('file name. >> ')
     # data_name = file_name + '.csv'
     # result_name = file_name + '.xlsx'
     pd.options.display.float_format = '{:.5f}'.format
@@ -1809,7 +1799,6 @@ def main():
     print('Number of devices: {}'.format(mirrored_strategy.num_replicas_in_sync))
     print("GPU is available? ",tf.test.is_gpu_available())
     print(tf.config.list_physical_devices('gpu'))
-    # input("dd")
 
     #0. get csv files in the folder.
     path_name = "dataset_new_avg"
@@ -1843,36 +1832,6 @@ def main():
         dataset = dataset.dropna()
         print(dataset.head())
         print("origin dataset length",len(dataset))
-        #
-        # # 1-1 Outlier 탐색
-        # print("++++++ Outlier search ++++++")
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["avgSentMsg"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["avgSentByte"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["secMaxSendMsg"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["secMaxSendByte"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["avgRecvMsg"])
-        # dataset = dataset.drop(Outliers_to_drop, axis=0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["avgRecvByte"])
-        # dataset = dataset.drop(Outliers_to_drop, axis=0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["secMaxRecvMsg"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # Outliers_to_drop = detect_outliers(dataset, 2, ["secMaxRecvByte"])
-        # dataset = dataset.drop(Outliers_to_drop, axis = 0).reset_index(drop=True)
-        #
-        # print("after delete outlier dataset`s len",len(dataset))
-        #input("chekc")
-
 
 
         X = dataset.drop(
@@ -1922,7 +1881,7 @@ def main():
                         ['avgSentMsg', 'secMaxSendMsg', 'avgRecvMsg', 'secMaxRecvMsg'],['avgSentByte', 'secMaxSendByte', 'avgRecvByte', 'secMaxRecvByte']]
         print("OutputitleTest",outputTitles[0])
 
-        # inference file 생성
+        # create inference file
         import openpyxl
         inferencefile = openpyxl.Workbook()
         test_inputfile = np.array(test_input, np.int32)
@@ -1950,7 +1909,6 @@ def main():
             string_time = resultNum[num] + " : " + str(train_time) + "\n"
 
             print(start_time, end_time, train_time, string_time)
-            # input("check")
 
             file = open("dataset_new_avg/timestamp/"+resultFileName+".txt", "a")
             file.write(string_time)
