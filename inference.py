@@ -1491,7 +1491,7 @@ def main():
                         ['avgSentByte', 'secMaxSendByte', 'avgRecvByte', 'secMaxRecvByte']]
         print("OutputitleTest", outputTitles[0])
 
-        # inference file 생성
+        # inference file
         import openpyxl
         inferencefile = openpyxl.Workbook()
         test_inputfile = np.array(test_input, np.int32)
