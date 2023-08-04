@@ -210,16 +210,10 @@ def print_accuracy_all_single(test_predictions,y_test):
 
 # <2. print result with 5 metrics>
 def print_accuracy_all(test_predictions,y_test,modelName):
-    # todo: 정확도 결과들을 딕셔너리 형태로 변경하기 (output마다 result를 한번에 저장하기 위함)
-
-    #출력결과 배열로 저장
-    # todo : result 데이터형태를 딕셔너리 형태로
     result_1 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     result_2 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     result_3 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     result_4 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    # result = [[0, 0, 0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0, 0, 0],
-    #           [0, 0, 0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
     result = {
         'Recv_bw' : result_1,
@@ -228,20 +222,15 @@ def print_accuracy_all(test_predictions,y_test,modelName):
         'Max_recv' : result_4
     }
 
-    # Accuracy 측정
+    # Accuracy Measurement
     dot_70 = 0
     dot_80 = 0
     dot_90 = 0
-    # print("_____________________________________")
-    # print("to check test / predict matirx type")
-    # print(test_predictions)
-    # print(y_test)
-    # print("_____________________________________")
+
     abserror = np.abs((test_predictions - y_test))
     errorrate = abserror / (y_test) * 100
     maperate = np.abs((test_predictions-y_test)/y_test) * 100
     accrate = 100 - errorrate
-    print("accrate!!!")
     acc_array = np.array(accrate)
 
     print(test_predictions)
@@ -254,7 +243,6 @@ def print_accuracy_all(test_predictions,y_test,modelName):
 
     #print(predict_col_1,predict_col_2,predict_col_3,predict_col_4)
 
-
     test_col_1 = y_test.iloc[:,0]
     test_col_2 = y_test.iloc[:,1]
     test_col_3 = y_test.iloc[:,2]
@@ -265,7 +253,6 @@ def print_accuracy_all(test_predictions,y_test,modelName):
     test_col_2 = np.array(test_col_2).flatten()
     test_col_3 = np.array(test_col_3).flatten()
     test_col_4 = np.array(test_col_4).flatten()
-
 
     acc_col_1 = accrate.iloc[:,0]
     acc_col_2 = accrate.iloc[:,1]
@@ -371,9 +358,8 @@ def calculate_accrate(name,predict,test,accrate,result):
     else:
         r2cal = r2_score(test, predict)
         result[8] = round(r2cal,3)
-
-    # print("R2: ")
-    # print(result[8])
+        # print("R2: ")
+        # print(result[8])
 
     return result
 
@@ -417,9 +403,9 @@ def write_excel(result_excel, models, results,result_name,outputTitles,rmsemodel
         eIndex = o+1
         wTitle = outputTitles[o]
         result_excel.create_sheet(index = eIndex, title=wTitle)
-        ws_1 = result_excel[wTitle]  #excel 파일에 ouptut label 별로 worksheet 따로 작성되는것 같음
+        ws_1 = result_excel[wTitle]
         ws_1.cell(row=1, column=1).value = 'Model'
-        ws_1.cell(row=1, column=2).value = 'Layer'    #1행, 2열부터 13열까지 label을 작성
+        ws_1.cell(row=1, column=2).value = 'Layer'
         ws_1.cell(row=1, column=3).value = 'Nodes'
         ws_1.cell(row=1, column=4).value = 'Over 70'
         ws_1.cell(row=1, column=5).value = 'Over 80'
@@ -435,36 +421,26 @@ def write_excel(result_excel, models, results,result_name,outputTitles,rmsemodel
 
         model_len = len(models)
         print("LENMODEL: ",model_len)
-        for i in range(len(models)):       #model의 길이만큼 밑으로 작성
+        for i in range(len(models)):
             print("MODEL_SUMMARY: ",str(models[i][4]))
-            ws_1.cell(row=counter, column=1).value = models[i][0] #model 의 이름
-            ws_1.cell(row=counter, column=2).value = models[i][1]  #model의 layer 수
-            #ws_1.cell(row=counter, column=3).value = models[i][2]  #model의 nodes 수
-            ws_1.cell(row=counter, column=3).value = str(models[i][3]) #model의 design / type = str
+            ws_1.cell(row=counter, column=1).value = models[i][0]
+            ws_1.cell(row=counter, column=2).value = models[i][1]
+            #ws_1.cell(row=counter, column=3).value = models[i][2]
+            ws_1.cell(row=counter, column=3).value = str(models[i][3])
             for j in range(0,9):
                 colj=4+j
                 print(i,o,j)
-                ws_1.cell(row=counter, column=colj).value = results[i][o][j]   #result 총 9개
-            ws_1.cell(row=counter, column=13).value = str(models[i][4])  # model의 design / type = str
+                ws_1.cell(row=counter, column=colj).value = results[i][o][j]
+            ws_1.cell(row=counter, column=13).value = str(models[i][4])
             counter = counter + 1
         ws_1.cell(row=40,column=1).value = rmsemodel[o]
         ws_1.cell(row=40, column=2).value = minrmse[o]
 
 
-print(20201208)
-#todo: 1208 / supere model 선정까지는 구현 완료
-#todo 이 파일은 모델을 학습시키고 생성하고 저장하니깐,
-#todo superem model 선정하고 모델이름과 구조를 엑셀파일로 저장시키면 될듯.
-
-
 #2. Models
-
-
-
-# 1) <Linear Regresssion>  - /multiple output regression /
+# 2-1) <Linear Regresssion>  - /multiple output regression /
 def lrModel(X_train,X_test,y_train,y_test):
-    # 스케일링
-    # 1.minmax 스케일러
+    # 1.minmax Sclaer
     scaler = MinMaxScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
@@ -487,7 +463,6 @@ def lrModel(X_train,X_test,y_train,y_test):
 
     print("<<<<<LR>>>>>")
     model.summary()
-    # patience 매개변수는 성능 향상을 체크할 에포크 횟수입니다
     early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
 
     model.fit(
@@ -508,8 +483,8 @@ def lrModel(X_train,X_test,y_train,y_test):
     return result
 
 def linearRegression_sk(X_train,X_test,y_train,y_test,outputType, valid_input, valid_output):
-    # 스케일링
-    # 1.minmax 스케일러
+    # Scaling
+    # 1.minmax Sclaer
     scaler = MinMaxScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
@@ -523,9 +498,6 @@ def linearRegression_sk(X_train,X_test,y_train,y_test,outputType, valid_input, v
     test_predictions = model.predict(X_test)
     result = print_accuracy_all(test_predictions, y_test,"Linear regression with sk")
     valid = model.predict(ptest_input)
-    # print(valid)
-    # input("DDDvlaid")
-
     #wirteInference(test_input,inference,inferencefile,outputType,"LR")
 
     return result,valid
@@ -543,7 +515,6 @@ def lsvrModel(X_train,X_test,y_train,y_test,outputType, valid_input, valid_outpu
     test_predictions = model.predict(X_test)
     result = print_accuracy_all(test_predictions, y_test,"Linear SVR")
     valid = model.predict(ptest_input)
-
     #wirteInference(test_input, inference, inferencefile, outputType, "SVR")
 
     # Save Trained Model
@@ -553,8 +524,8 @@ def lsvrModel(X_train,X_test,y_train,y_test,outputType, valid_input, valid_outpu
 
 # 3) <ForestRegression>
 def rforestModel(X_train, X_test, y_train, y_test, outputType, valid_input, valid_output,tree):
-    # 스케일링
-    # 1.minmax 스케일러
+    # Scaling
+    # 1.minmax Scaler
     scaler = MinMaxScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
@@ -607,6 +578,7 @@ def lightgbm_model(X_train, X_test, y_train, y_test, valid_input, valid_output):
     #num_round = 10
 
     model = lgb.train(params, train_data, 1000, valid_sets=[valid_data])
+    # delete early_stopping
     # model = lgb.train(params, train_data, 1000, valid_sets=[valid_data], early_stopping_rounds=100)
 
     predict_test = model.predict(X_test)
@@ -643,7 +615,7 @@ def XGBoost_model(X_train, X_test, y_train, y_test, valid_input, valid_output):
 
 
 # 4) <ANN>
-class Architecture:    #todo: architecture 에 다른 parameter 추가 (10.21)
+class Architecture:
     def __init__(self, name, layer, nodes, design):
         self.name = name
         self.layer = layer
@@ -731,8 +703,8 @@ def annModel(architecture, X_train, X_test, y_train, y_test, annname,outputType,
     checkpoint_dir = os.path.dirname(checkpoint_path)
     cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path, save_weights_only=True, verbose=1)
 
-    # 스케일링
-    # 1.minmax 스케일러
+    # Scaling
+    # 1.minmax sclaer
     scaler = MinMaxScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
