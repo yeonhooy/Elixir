@@ -27,7 +27,7 @@ The repository is organized as follows:
      
 ## Prerquisites 
 -  install required dependencies and libraries with conda (Please install conda)
--  execute conda: $source ~/.bashrc 
+-  execute conda: $conda activate
 
 ## Execution guides 
 
