@@ -85,10 +85,6 @@ def detect_outliers(df, n, features):
         outlier_indices.extend(outlier_list_col)
         print("Outlier`s len",len(outlier_indices))
         print("Outlier",outlier_indices)
-        #input("dd")
-    #outlier_indices = Counter(outlier_indices)
-    #print("outlier_indices.items()",outlier_indices)
-    #multiple_outliers = list(k for k, v in outlier_indices.items() if v > n)
 
     return outlier_indices
 def detect_outliers_delete(df, n, features):
@@ -113,16 +109,13 @@ def detect_outliers_delete(df, n, features):
         for i in range(len(outlier_indices)):
             df = df.drop(df.index[outlier_indices[i]])
         print ("new df ",df)
-    #outlier_indices = Counter(outlier_indices)
-    #print("outlier_indices.items()",outlier_indices)
-    #multiple_outliers = list(k for k, v in outlier_indices.items() if v > n)
 
     return df
 
 def print_accuracy_all_single(test_predictions,y_test):
-    #출력결과 배열로 저장
+    #Array of resutls
     result = [0,0,0,0,0,0,0,0,0]
-    # Accuracy 측정
+    # Accuracy Measurement
     dot_70 = 0
     dot_80 = 0
     dot_90 = 0
