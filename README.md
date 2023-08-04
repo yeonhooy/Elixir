@@ -16,7 +16,8 @@ The repository is organized as follows:
 
 * `Elixir/`: contains the core implementation of *Elixir*. 
 * `Elixir/dataset_new_avg/`: contains the dataset of *Elixir*. 
-   * `Elixir/dataset_new_avg/`: Trainingset ('fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv')
+   * `Elixir/dataset_new_avg/`: Trainingset
+       * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
    * `dataset_new_avg/exlixir_model_save/` 
    * `dataset_new_avg/inf_realvalue/new_score_csv/`
    * `dataset_new_avg/result/`
