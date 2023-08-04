@@ -20,7 +20,7 @@ The repository is organized as follows:
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
    * `dataset_new_avg/test_datacenter/`: Test dataset
        * 'scor_test.csv' 
-   * `dataset_new_avg/exlixir_model_save/` 
+   * `dataset_new_avg/exlixir_model_save/`
    * `dataset_new_avg/inf_realvalue/new_score_csv/`
    * `dataset_new_avg/result/`
    * `dataset_new_avg/scoring/`
