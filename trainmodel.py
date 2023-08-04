@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import tensorflow.compat.v1 as v1
 from tensorflow import keras
 from tensorflow.keras.regularizers import l1,l2
 from tensorflow.keras.optimizers import SGD,Adam,RMSprop
@@ -612,7 +613,8 @@ def lightgbm_model(X_train, X_test, y_train, y_test, valid_input, valid_output):
 
     #num_round = 10
 
-    model = lgb.train(params, train_data, 1000, valid_sets=[valid_data], early_stopping_rounds=100)
+    model = lgb.train(params, train_data, 1000, valid_sets=[valid_data])
+    # model = lgb.train(params, train_data, 1000, valid_sets=[valid_data], early_stopping_rounds=100)
 
     predict_test = model.predict(X_test)
 
@@ -725,8 +727,9 @@ class Default(Design):
         self.beta_1 = 0.9
         self.beta_2 = 0.999
         self.epsilon = 1e-08
-        self.decay = 0.0
-        self.optimizer = Adam(lr=self.lr, beta_1=self.beta_1, beta_2=self.beta_2, epsilon=self.epsilon, decay=self.decay)
+        self.decay = 0.00000001
+        # self.optimizer = Adam(lr=self.lr, beta_1=self.beta_1, beta_2=self.beta_2, epsilon=self.epsilon, decay=self.decay)
+        self.optimizer = Adam(lr=self.lr, beta_1=self.beta_1, beta_2=self.beta_2, epsilon=self.epsilon)
 
 def annModel(architecture, X_train, X_test, y_train, y_test, annname,outputType,resultFileName, valid_input,valid_output):
     # checkpoint
