@@ -30,12 +30,12 @@ The repository is organized as follows:
    *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
      
 ## Prerquisites 
--  install required dependencies and libraries with conda. Please install [conda](https://www.anaconda.com/download)
--  execute conda
+-  Install required dependencies and libraries with conda. Please install [conda](https://www.anaconda.com/download)
+-  Execute conda
     `$conda activate`
--  import conda env
+-  Import conda env
     `$conda env create -f Elixir_env.yaml`
--  activate env
+-  Activate env
     `$conda activate Elixir_env`
 
 ## Execution guides 
@@ -43,8 +43,8 @@ The repository is organized as follows:
 ### 1. train code 
   `$ python trainmodel.py`
   ```
-  dataset path: dataset_new_avg/xxx.csv
-  result path: dataset_new_avg/result/modelselect/
+  Please check dataset path: dataset_new_avg/
+  Training result(model) path: dataset_new_avg/result/modelselect/
   ```
 ### 2. inference code: 
   `$ python inference.py`
