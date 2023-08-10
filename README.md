@@ -53,19 +53,17 @@ The repository is organized as follows:
   - result:  dataset_new_avg/result/xxx.xlsx
   ```
 ### 3. Model selection
-1) Naive model: $ python naiiveselction.py
+1) Naive model: `$ python naiiveselction.py`
    - result path: `dataset_new_avg/result/modelselect/naiive.txt`
-3) Freq model: $ python freq_modelselection.py
+3) Freq model: `$ python freq_modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/freq.txt`
-5) Supreme model: $ python modelselection.py
+5) Supreme model: `$ python modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/supreme.txt`
 
 
-### 4. summary
-```
-1) rmse: $ selectedmodelonlysummary_RMSE.py
+### 4. Prediction Accuracy Summary
+1) RMSE: $ selectedmodelonlysummary_RMSE.py
 * result: dataset_new_avg/result/modelselect
 
-2) freq rate: $ freqscore_FREQ.py
+2) Freq rate: $ freqscore_FREQ.py
 * result: dataset_new_avg/result/modelselect
-```
