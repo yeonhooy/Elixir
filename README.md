@@ -30,7 +30,7 @@ The repository is organized as follows:
    *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
      
 ## Prerquisites 
--  install required dependencies and libraries with conda (Please install [conda](https://www.anaconda.com/download)
+-  install required dependencies and libraries with conda (Please install [conda](https://www.anaconda.com/download))
 -  execute conda
     `$conda activate`
 -  import conda env
