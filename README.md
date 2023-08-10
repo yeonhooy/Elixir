@@ -40,7 +40,7 @@ The repository is organized as follows:
 
 ## Execution guides 
 
-### 1. train code 
+### 1. Training (Model Space) 
   `$ python trainmodel.py`
   - Please check location of training dataset path: `dataset_new_avg/`
   - Training result(trained models) path: `dataset_new_avg/result/modelselect/`
@@ -52,14 +52,15 @@ The repository is organized as follows:
   - modify code (question sheet, answer sheet path) 
   - result:  dataset_new_avg/result/xxx.xlsx
   ```
-### 3. modelselection code
-```
-1) naive: $ python naiiveselction.py
-2) freq: $ python freq_modelselection.py
-3) supreme: $ python modelselection.py
+### 3. Model selection
+1) Naive model: $ python naiiveselction.py
+   - result path: `dataset_new_avg/result/modelselect/naiive.txt`
+3) Freq model: $ python freq_modelselection.py
+   - result path: `dataset_new_avg/result/modelselect/freq.txt`
+5) Supreme model: $ python modelselection.py
+   - result path: `dataset_new_avg/result/modelselect/supreme.txt`
 
-* result: dataset_new_avg/result/modelselect/naiive.txt,freq.txt,supreme.txt
-````
+
 ### 4. summary
 ```
 1) rmse: $ selectedmodelonlysummary_RMSE.py
