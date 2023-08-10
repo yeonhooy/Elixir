@@ -42,10 +42,8 @@ The repository is organized as follows:
 
 ### 1. train code 
   `$ python trainmodel.py`
-  ```
-  Please check dataset path: dataset_new_avg/
-  Training result(model) path: dataset_new_avg/result/modelselect/
-  ```
+  - Please check dataset path: dataset_new_avg/
+  - Training result(model) path: dataset_new_avg/result/modelselect/
 ### 2. inference code: 
   `$ python inference.py`
   ```
