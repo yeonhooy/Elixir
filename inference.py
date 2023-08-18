@@ -1,3 +1,9 @@
+# Copyright 2023 by Yeonho Yoo, Operating systems lab (Korea university, Seoul).
+# All rights reserved.
+# This file is part of Machine Learning-based Prediction Models for Control Traffic in SDN Systems (Elixr),
+# and is released under the "MIT License Agreement". Please see the LICENSE
+# file that should have been included as part of this package.
+
 from __future__ import absolute_import, division, print_function, unicode_literals, unicode_literals
 
 import pathlib
