@@ -1,1 +1,0 @@
-Here, the trained model will be located in 
