@@ -21,7 +21,7 @@ The repository is organized as follows:
    * `dataset_new_avg/inf_realvalue/scoring/`: Scroing datset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
        * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
-  * `dataset_new_avg/inf_realvalue/evaluation/`: Evaluation datset
+   * `dataset_new_avg/inf_realvalue/evaluation/`: Evaluation datset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
        * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
    * `dataset_new_avg/exlixir_model_save/`: pre-trained model (example of trained models of model space)
@@ -54,15 +54,18 @@ The repository is organized as follows:
 ### 3. Model selection
 1) Naive model: `$ python naiiveselction.py`
    - result path: `dataset_new_avg/result/modelselect/naiive.txt`
+   - result summary path: `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
 3) Freq model: `$ python freq_modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/freq.txt`
+   - result summary path: `dataset_new_avg/result/modelselect/freqselectModel.xlsx`
 5) Supreme model: `$ python modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/supreme.txt`
+   - result summary path: `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
 
 
 ### 4. Prediction Accuracy Summary
-1) RMSE: $ selectedmodelonlysummary_RMSE.py
-* result: dataset_new_avg/result/modelselect
+1) RMSE: `$ selectedmodelonlysummary_RMSE.py`
+* result: `dataset_new_avg/result/modelselect`
 
-2) Freq rate: $ freqscore_FREQ.py
-* result: dataset_new_avg/result/modelselect
+2) Freq rate: `$ freqscore_FREQ.py`
+* result: `dataset_new_avg/result/modelselect`
