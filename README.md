@@ -20,14 +20,14 @@ The repository is organized as follows:
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
    * `dataset_new_avg/test_datacenter/`: Inference test dataset
        * 'scor_test.csv'
-   * `dataset_new_avg/scoring/: Scroing datset
+   * `dataset_new_avg/inf_realvalue/scoring/`: Scroing datset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
-   * `dataset_new_avg/exlixir_model_save/`
-   * `dataset_new_avg/inf_realvalue/new_score_csv/`
-   * `dataset_new_avg/result/`
-   * `dataset_new_avg/timestamp/`
-* `Elixir/topology_experiment/`: contains scripts for virtual network topology using Mininet.
-   *  `topology_experiment/vncreation/`: contains scripts for virtual network creations
+       * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
+  * `dataset_new_avg/inf_realvalue/evaluation/`: Evaluation datset
+       * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
+       * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
+   * `dataset_new_avg/exlixir_model_save/`: pre-trained model (example of trained models of model space)
+
      
 ## Prerquisites 
 -  Install required dependencies and libraries with conda. Please install [conda](https://www.anaconda.com/download)
