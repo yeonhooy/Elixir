@@ -18,8 +18,6 @@ The repository is organized as follows:
 * `Elixir/dataset_new_avg/`: contains the dataset of *Elixir*. 
    * `Elixir/dataset_new_avg/`: Training dataset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
-   * `dataset_new_avg/test_datacenter/`: Inference test dataset
-       * 'scor_test.csv'
    * `dataset_new_avg/inf_realvalue/scoring/`: Scroing datset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
        * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
