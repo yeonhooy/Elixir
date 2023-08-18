@@ -597,7 +597,7 @@ def lightgbm_model(X_train, X_test, y_train, y_test, test_input):
 
     # num_round = 10
 
-    model = lgb.train(params, train_data, 1000, valid_sets=[valid_data], early_stopping_rounds=100)
+    model = lgb.train(params, train_data, 1000, valid_sets=[valid_data])
 
     # predict_test = model.predict(X_test)
 
@@ -1121,17 +1121,22 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
     print(inference)
 
     # ANSWER sheet for test_input
-    #realdatafilename = "dataset_new_avg/inf_realvalue/new_score_csv/" + resultFileName + ".xlsx"
-    realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
+    testtype = sys.argv[1]
+    testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/' + testtype + '/' + resultFileName + '.xlsx')
+
+    #realdatafilename = "dataset_new_avg/inf_realvalue/scoring/" + resultFileName + ".xlsx"
+    #realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/dt_csv/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/fl_dt/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/TC_test/" + resultFileName + ".xlsx"
 
     print(realdatafilename)
     real_wb = load_workbook(realdatafilename, data_only=True)
-    #real_sheet = real_wb["Sheet"]
-    #real_sheet = real_wb["Sheet1"]
-    real_sheet = real_wb[resultFileName]
+    try:
+        real_sheet = real_wb["Sheet"]
+    except:
+        real_sheet = real_wb["Sheet1"]
+    #real_sheet = real_wb[resultFileName]
     # input("stop")
 
     #superemeloadfullpath = "dataset_new_avg/result/datcenter/" + result_name
@@ -1393,9 +1398,13 @@ def main():
     testfile_list_csv.sort()
     print(testfile_list_csv)
 
+    # 0r, input training set in argv
+    test_datset = sys.argv[2:]
+    print(test_datset)
+
     #file_list_csv = ['p4_default.csv']
     #file_list_csv = ['onos_of10_default.csv', 'odl_of10_default', 'odl_of10_lldpstats', 'odl_of13_default', 'p4-total']
-    for csvfile in file_list_csv:
+    for csvfile in test_datset:
         filenaming = csvfile.split('.')
         resultFileName = filenaming[0]
         print("Result file name : " + resultFileName)
@@ -1473,8 +1482,11 @@ def main():
         # input("save csv file")
 
         # QUESTION Sheet
-        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/new_score_csv/' + resultFileName + '.csv')
-        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
+        testtype = sys.argv[1]
+        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/'+testtype+'/' + resultFileName + '.csv')
+
+        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/scoring/' + resultFileName + '.csv')
+        #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/dt_csv/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/fl_eval/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/TC_test/' + resultFileName + '.csv')
