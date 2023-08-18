@@ -1808,6 +1808,14 @@ def main():
     print(file_list_csv)
     counter = 1
 
+    # 0r, input training set in argv
+    training_datset = sys.argv[1:]
+    print(training_datset)
+    file_list_csv=training_datset
+
+
+
+
     #1. get test data (for inference) - will not be used at training session
     test_path_name = "dataset_new_avg/test_datacenter"
     testfile_list = os.listdir(test_path_name)
