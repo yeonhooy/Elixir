@@ -47,6 +47,7 @@ The repository is organized as follows:
   `$ python inference.py [testtype] [training_dataset csv name]`
   - inference dataset path: `dataset_new_avg/inf_realvalue/[testtype]/`
     - require both csv file and xlsx file
+    - testtype: scoring or evaluation
   - scoring: `$ python inference.py scoring onos_default_of10.csv onos_default_of13.csv`
   - evaluation: `$ python inference.py evaluation onos_default_of10.csv onos_default_of13.csv`
 
