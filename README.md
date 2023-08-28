@@ -51,7 +51,7 @@ The repository is organized as follows:
   - scoring: `$ python inference.py scoring onos_default_of10.csv onos_default_of13.csv`
   - evaluation: `$ python inference.py evaluation onos_default_of10.csv onos_default_of13.csv`
 
-  - result:  `dataset_new_avg/result/xxx.xlsx`
+  - result files(xlsx):  `dataset_new_avg/result/`
 ### 3. Model selection
 1) Naive model: `$ python naiiveselction.py`
    - result path: `dataset_new_avg/result/modelselect/naiive.txt`
