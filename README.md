@@ -54,8 +54,8 @@ The repository is organized as follows:
   - result files(xlsx):  `dataset_new_avg/result/`
 ### 3. Model selection
 1) Naive model: `$ python naiiveselction.py`
-   - result path: `dataset_new_avg/result/modelselect/naiive.txt`
-   - result summary path: `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
+   - result path(txt): `dataset_new_avg/result/modelselect/naiive.txt`
+   - result summary path(xlsx): `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
 3) Freq model: `$ python freq_modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/freq.txt`
    - result summary path: `dataset_new_avg/result/modelselect/freqselectModel.xlsx`
