@@ -4,7 +4,7 @@ This repository contains the implementation of *Elixir*, a machine learning fram
 
 ## Overview
 
-We provide all source codes, including *Elixir* implementation and experiment scripts. The provided codes xx.
+We provide all source codes, including *Elixir* implementation and experiment scripts. The provided codes are organized as follows.
 
 * [Part 1](#Repository-organization) describes the source-code organization of this repository.
 * [Part 2](#Prerquisites) contains the steps to configure dependencies and compilation to run *Elixir*.
