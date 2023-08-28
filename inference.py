@@ -1127,8 +1127,8 @@ def wirteInference(testdatafile, inference, resultfile, outputType, sheetname, s
     print(inference)
 
     # ANSWER sheet for test_input
-    testtype = sys.argv[1]
-    realdatafilename = "dataset_new_avg/inf_realvalue/" + testtype + "/" + resultFileName + ".xlsx"
+    test_type = sys.argv[1]
+    realdatafilename = "dataset_new_avg/inf_realvalue/" + test_type + "/" + resultFileName + ".xlsx"
 
     #realdatafilename = "dataset_new_avg/inf_realvalue/scoring/" + resultFileName + ".xlsx"
     #realdatafilename = "dataset_new_avg/inf_realvalue/evaluation/" + resultFileName + ".xlsx"
@@ -1488,8 +1488,8 @@ def main():
         # input("save csv file")
 
         # QUESTION Sheet
-        testtype = sys.argv[1]
-        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/'+testtype+'/' + resultFileName + '.csv')
+        test_type = sys.argv[1]
+        testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/' + test_type + '/' + resultFileName + '.csv')
 
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/scoring/' + resultFileName + '.csv')
         #testdatasetw = pd.read_csv('dataset_new_avg/inf_realvalue/evaluation/' + resultFileName + '.csv')
