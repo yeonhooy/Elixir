@@ -44,18 +44,18 @@ The repository is organized as follows:
   - Please check location of training dataset path: `dataset_new_avg/`
   - Training result(trained models) path: `dataset_new_avg/elixir-modelsave/`
 ### 2. Inference code 
-  `$ python inference.py [testtype] [training_dataset csv name]`
-  - inference dataset path: `dataset_new_avg/inf_realvalue/[testtype]/`
+  `$ python inference.py [test_type] [training_dataset csv name]`
+  - inference dataset path: `dataset_new_avg/inf_realvalue/[test_type]/`
     - require both `csv` file and `xlsx` file
-    - testtype: scoring or evaluation
+    - test_type: scoring or evaluation
   - scoring: `$ python inference.py scoring onos_default_of10.csv onos_default_of13.csv`
   - evaluation: `$ python inference.py evaluation onos_default_of10.csv onos_default_of13.csv`
 
   - result files(xlsx):  `dataset_new_avg/result/`
 ### 3. Model selection
 1) Naive model: `$ python naiiveselction.py`
-   - result path(`txt`): `dataset_new_avg/result/modelselect/naiive.txt`
-   - result summary path(`xlsx`): `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
+   - result path (`txt`): `dataset_new_avg/result/modelselect/naiive.txt`
+   - result summary path (`xlsx`): `dataset_new_avg/result/modelselect/naiiveselectModel.xlsx`
 3) Freq model: `$ python freq_modelselection.py`
    - result path: `dataset_new_avg/result/modelselect/freq.txt`
    - result summary path: `dataset_new_avg/result/modelselect/freqselectModel.xlsx`
@@ -65,8 +65,8 @@ The repository is organized as follows:
 
 
 ### 4. Prediction Accuracy Summary
-1) RMSE: `$ selectedmodelonlysummary_RMSE.py`
+1) RMSE: `$ python selectedmodelonlysummary_RMSE.py`
 * result: `dataset_new_avg/result/modelselect`
 
-2) Freq rate: `$ freqscore_FREQ.py`
+2) Freq rate: `$ python freqscore_FREQ.py`
 * result: `dataset_new_avg/result/modelselect`
