@@ -24,7 +24,7 @@ The repository is organized as follows:
    * `dataset_new_avg/inf_realvalue/evaluation/`: Evaluation datset
        * 'fl_default_of10.csv', 'fl_default_of13.csv', 'odl_default_of10.csv', 'odl_default_of13.csv', 'onos_default_of10.csv', 'onos_default_of13.csv', 'onos_proxyarp_of13.csv', 'onos_stats1_of13.csv', 'p4_default.csv'
        * 'fl_default_of10.xlsx', 'fl_default_of13.xlsx', 'odl_default_of10.xlsx', 'odl_default_of13.xlsx', 'onos_default_of10.xlsx', 'onos_default_of13.xlsx', 'onos_proxyarp_of13.xlsx', 'onos_stats1_of13.xlsx', 'p4_default.xlsx'
-   * `dataset_new_avg/exlixir_model_save/`: pre-trained model (example of trained models of model space)
+ * `dataset_new_avg/exlixir_model_save/`: pre-trained model (example of trained models of model space)
 
      
 ## Prerquisites 
