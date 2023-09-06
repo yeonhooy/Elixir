@@ -74,5 +74,6 @@ The repository is organized as follows:
 ### Contacts
 + This project is from [Operating systems Lab](https://os.korea.ac.kr/), Korea University. 
 + Contact: yhyoo@os.korea.ac.kr
-+ Contributors: Yeonho Yoo, [Gyeongsik Yang](https://sites.google.com/view/sslab-ku), Hyokyung Kim, Changyong Shin, Junseok Lee, Chuck Yoo (advisor) 
++ Contributors: Yeonho Yoo, Gyeongsik Yang, Hyokyung Kim, Changyong Shin, Junseok Lee, Chuck Yoo (advisor)
+
 
