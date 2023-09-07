@@ -43,7 +43,7 @@ The repository is organized as follows:
   - e.g., `$ python trainmodel.py onos_default_of10.csv onos_default_of13.csv`
   - Please check location of training dataset path: `dataset_new_avg/`
   - Training result(trained models) path: `dataset_new_avg/elixir-modelsave/`
-### 2. Inference code 
+### 2. Inference 
   `$ python inference.py [test_type] [training_dataset csv name]`
   - inference dataset path: `dataset_new_avg/inf_realvalue/[test_type]/`
     - require both `csv` file and `xlsx` file
