@@ -70,3 +70,10 @@ The repository is organized as follows:
 
 2) Freq rate: `$ python freqscore_FREQ.py`
 * result: `dataset_new_avg/result/modelselect`
+
+### Contacts
++ This project is from [Operating systems Lab](https://os.korea.ac.kr/), Korea University. 
++ Contact: yhyoo@os.korea.ac.kr
++ Contributors: Yeonho Yoo, Gyeongsik Yang, Hyokyung Kim, Changyong Shin, Junseok Lee, Chuck Yoo (advisor)
+
+
