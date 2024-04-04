@@ -75,5 +75,20 @@ The repository is organized as follows:
 + This project is from [Operating systems Lab](https://os.korea.ac.kr/), Korea University. 
 + Contact: yhyoo@os.korea.ac.kr
 + Contributors: Yeonho Yoo, Gyeongsik Yang, Changyong Shin, Junseok Lee, Chuck Yoo (advisor)
++ 
+## Citation
+
+```
+@ARTICLE{Meteor2023,
+  author={Yoo, Yeonho and Yang, Gyeongsik and Shin, Changyong and Lee, Junseok and Yoo, Chuck},
+  journal={IEEE Transactions on Services Computing}, 
+  title={Machine Learning-Based Prediction Models for Control Traffic in SDN Systems}, 
+  year={2023},
+  volume={16},
+  number={6},
+  pages={4389-4403},
+  keywords={Predictive models;Control systems;Training;Network topology;Throughput;Prediction algorithms;Machine learning;Machine learning;software-defined networking;control traffic;prediction model formulation;prediction robustness},
+  doi={10.1109/TSC.2023.3324007}}
+```
 
 
